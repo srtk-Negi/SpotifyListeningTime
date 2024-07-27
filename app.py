@@ -60,6 +60,15 @@ def get_time_in_hours_mins_and_secs(time_in_seconds: int) -> str:
 
 
 def main():
+    if not YEAR:
+        print(
+            "Please provide the year for which you want to calculate the total time listened to music."
+        )
+        return
+    if not os.path.exists(DATA_DIR):
+        print("The data directory does not exist.")
+        return
+
     all_spotify_files = os.listdir(DATA_DIR)
     streaming_history_files = [
         file for file in all_spotify_files if "streaminghistory_music" in file.lower()
