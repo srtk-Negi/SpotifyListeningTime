@@ -1,3 +1,5 @@
-data/*.json
+data/spotify*
 .vscode
 .DS_Store
+menv
+.env
